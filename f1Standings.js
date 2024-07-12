@@ -2,7 +2,7 @@ console.log('fetch-standings.js loaded')
 
 async function fetchStandings() {
     try {
-        const response = await fetch('http://ergast.com/api/f1/current/driverStandings.json');
+        const response = await fetch('https://ergast.com/api/f1/current/driverStandings.json');
         const data = await response.json();
         return data;
     } catch (error) {
