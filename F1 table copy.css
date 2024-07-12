@@ -8,18 +8,6 @@
     border-width: 15px;
     padding: 16px;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: 0.2s;
-}
-
-.title button{
-    max-width: max-content;
-    border: 0px;
-    padding: 4px 16px;
-    border-radius: 10px;
-    font-size: 1.2rem;
 }
 
 body{
@@ -43,8 +31,7 @@ table{
     border-spacing: 0;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 0 16px 8px #00000066;
-    transition: 0.2s;
+    box-shadow: 0 0 16px 8px rgba(0, 0, 0, 0.4);
     margin: 32px 0;
 }
 
@@ -54,20 +41,16 @@ thead{
 }
 
 tbody tr{
-    background-color:#245aa2;
-    transition: 0.2s;
+    background-color:#233245;
 }
 
 tbody tr:nth-child(odd){
-    background-color: #1a5399;
-    transition: 0.2s;
+    background-color: #192534;
 }
 
 thead tr{
-    background-color: #d20d2a;
-    transition: 0.2s;
+    background-color: #a50d24;
 }
-
 thead th{
     padding: 16px 24px;
     border-right: 1px solid black;
@@ -166,44 +149,4 @@ footer h1{
     margin-bottom: 0;
     padding: 2rem 8px;
     text-shadow: -3px 5px 10px white;
-}
-
-button{
-    background-color: black;
-    color: white;
-}
-
-
-
-/* Dark Mode Styles */
-
-
-body.darkmode tbody tr{
-    background-color:#233245;
-}
-
-body.darkmode tbody tr:nth-child(odd){
-    background-color:#192534;
-}
-
-body.darkmode thead tr{
-    background-color: #a50d24;
-}
-
-body.darkmode tr:hover td:last-child{
-    color: green;
-}
-
-body.darkmode{
-    background-color:#1e1e1e;
-}
-
-body.darkmode .title{
-    color:white;
-    background: linear-gradient(to bottom, black, transparent);
-}
-
-body.darkmode button{
-    background-color: white;
-    color: black;
 }

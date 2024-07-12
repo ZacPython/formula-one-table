@@ -83,3 +83,11 @@ async function seasonDetails() {
     table.querySelector("tbody").innerHTML = standingsHTML
     seasontitle.innerHTML = ` Formula 1 Standings For ${season.season} Season, Current Round: ${season.round}`
 })();
+
+function toggleDarkmode(){
+    if(document.body.classList.contains("darkmode")){
+        document.body.classList.remove("darkmode")
+        return
+    }
+    document.body.classList.add("darkmode")
+}
