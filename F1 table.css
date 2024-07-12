@@ -1,0 +1,152 @@
+.title{
+    color:white;
+    background: linear-gradient(to bottom, black, transparent);
+    font-family:Helvetica, sans-serif;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-top: 0px;
+    border-width: 15px;
+    padding: 16px;
+    text-align: center;
+}
+
+body{
+    background-color:#9CABBF;
+    font-family:Helvetica, sans-serif;
+    margin: 0;
+}
+
+div{
+    display: flex;
+    justify-content:center;
+    overflow-x: scroll;
+}
+
+table{
+    text-align: center;
+    font-size: medium;
+    border-width: 15px;
+    border: solid black;
+    color:white;
+    border-spacing: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 16px 8px rgba(0, 0, 0, 0.4);
+    margin: 32px 0;
+}
+
+thead{
+    font-weight: bolder;
+    font-size: x-large;
+}
+
+tbody tr{
+    background-color:#233245;
+}
+
+tbody tr:nth-child(odd){
+    background-color: #192534;
+}
+
+thead tr{
+    background-color: #a50d24;
+}
+thead th{
+    padding: 16px 24px;
+    border-right: 1px solid black;
+}
+thead th:last-child{
+    border-right: 0;
+}
+
+tbody td{
+    padding: 10px 8px;
+    transition: 0.2s;
+}
+
+tr:hover td{
+    padding: 16px 8px;
+}
+tr:hover td:last-child{
+    color: limegreen;
+}
+
+a{
+    color:white;
+}
+
+a:link { 
+    text-decoration: none; 
+} 
+
+a:visited { 
+    text-decoration: none;
+} 
+
+a:hover { 
+    text-decoration: none; 
+} 
+
+a:active { 
+    text-decoration: none; 
+}
+
+td{
+    font-weight:bold;
+}
+
+.sauber:hover{
+    color:#39ff14;
+}
+
+.williams:hover{
+    color:blue;
+}
+
+.alpine:hover{
+    color:hotpink;
+}
+
+.haas:hover{
+    color:lightgray;
+}
+
+.ferrari:hover{
+    color:#e10600;
+}
+
+.red_bull:hover{
+    color: #1434cb;
+}
+
+.aston_martin:hover{
+    color:#00665e;
+}
+
+.mercedes:hover{
+    color:#00f5d0;
+}
+
+.mclaren:hover{
+    color:orange;
+}
+
+.rb:hover{
+    color: #1434cb;
+}
+
+.audi:hover{
+    color:#e10600;
+}
+
+footer{
+    background: linear-gradient(to top, #fd7e14,#0dcaf0, transparent );
+    text-align: center;
+}
+
+footer h1{
+    margin: 2rem 0;
+    margin-bottom: 0;
+    padding: 2rem 8px;
+    text-shadow: -3px 5px 10px white;
+}
