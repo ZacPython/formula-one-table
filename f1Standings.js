@@ -1,4 +1,5 @@
 console.log('fetch-standings.js loaded')
+
 async function fetchStandings() {
     try {
         const response = await fetch('https://ergast.com/api/f1/current/driverStandings.json');
@@ -9,6 +10,7 @@ async function fetchStandings() {
         return null;
     }
 }
+
 async function driverDetails() {
     try {
         const data = await fetchStandings();
@@ -41,6 +43,7 @@ async function driverDetails() {
         console.log('Error:', error);
     }
 }
+
 async function seasonDetails() {
     try {
         const data = await fetchStandings();
@@ -52,7 +55,9 @@ async function seasonDetails() {
         console.log('Error:', error);
     }
 }
-document.addEventListener('DOMContentLoaded', async () => {
+
+(async function () {
+
     const drivers = await driverDetails();
     const season = await seasonDetails();
     console.table(drivers)
@@ -73,11 +78,12 @@ document.addEventListener('DOMContentLoaded', async () => {
         standingsHTML = standingsHTML + driverHTML;
     })
     console.log(standingsHTML)
-    //We are appending the HTML directly to the table, we do not need to use querySelector
-    //we can now use innerHTML as we are setting it to the string that we have generated.
+
+
     table.querySelector("tbody").innerHTML = standingsHTML
     seasontitle.innerHTML = ` Formula 1 Standings For ${season.season} Season, Current Round: ${season.round}`
-});
+})();
+
 function toggleDarkmode(){
     if(document.body.classList.contains("darkmode")){
         document.body.classList.remove("darkmode")
