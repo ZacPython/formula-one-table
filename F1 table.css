@@ -157,7 +157,7 @@ td{
 }
 
 footer{
-    background-color: #9932cc;
+    background: linear-gradient(#9932CC, #32cd32);
     text-align: center;
 }
 
@@ -206,4 +206,9 @@ body.darkmode .title{
 body.darkmode button{
     background-color: white;
     color: black;
+}
+
+body.darkmode footer{
+    background: linear-gradient(#32cd32, #9932CC);
+    text-align: center;
 }
