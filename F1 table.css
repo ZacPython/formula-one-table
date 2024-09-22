@@ -157,7 +157,7 @@ td{
 }
 
 footer{
-    background: linear-gradient(to bottom, #9932CC, #32cd32, transparent);
+    background: linear-gradient(45deg, rgba(255,0,0,1) 0%, rgba(255,126,0,1) 50%, rgba(255,254,0,1) 100%);
     text-align: center;
 }
 
@@ -209,5 +209,5 @@ body.darkmode button{
 }
 
 body.darkmode footer{
-    background: linear-gradient(to bottom, #32cd32, #9932CC, transparent);
+    background: linear-gradient(45deg, rgba(0,255,255,1) 0%, rgba(0,129,255,1) 50%, rgba(0,1,255,1) 100%);
 }
