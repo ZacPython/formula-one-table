@@ -157,7 +157,7 @@ td{
 }
 
 footer{
-    background: linear-gradient(#9932CC, #32cd32);
+    background: linear-gradient(to bottom, #9932CC, #32cd32);
     text-align: center;
 }
 
@@ -209,6 +209,6 @@ body.darkmode button{
 }
 
 body.darkmode footer{
-    background: linear-gradient(#32cd32, #9932CC);
+    background: linear-gradient(to bottom, #32cd32, #9932CC);
     text-align: center;
 }
