@@ -209,5 +209,6 @@ body.darkmode button{
 }
 
 body.darkmode footer{
+    color: black;
     background: linear-gradient(to top, transparent, #00ffff 0%, #0081ff 50%, #0001ff 100%, transparent);
 }
