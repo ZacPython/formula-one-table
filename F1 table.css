@@ -85,7 +85,7 @@ tr:hover td{
     padding: 16px 8px;
 }
 tr:hover td:last-child{
-    color: limegreen;
+    color: black;
 }
 
 a{
@@ -191,7 +191,7 @@ body.darkmode thead tr{
 }
 
 body.darkmode tr:hover td:last-child{
-    color: green;
+    color: lightskyblue;
 }
 
 body.darkmode{
