@@ -157,8 +157,9 @@ td{
 }
 
 footer{
-    /* background: linear-gradient(to bottom, transparent #ff0000 0%, #ff7e00 50%, #fffe00  100%, transparent); */
+    background: linear-gradient(to bottom,#ff0000 0%, #ff7e00 50%, #fffe00  100%);
     text-align: center;
+    color: linear-gradient(to top, black, white);
 }
 
 footer h1{
@@ -209,6 +210,6 @@ body.darkmode button{
 }
 
 body.darkmode footer{
-    color: black;
-    background: linear-gradient(to top, transparent, #00ffff 0%, #0081ff 50%, #0001ff 100%, transparent);
+    color: linear-gradient(to bottom, black, white);
+    background: linear-gradient(to top, #00ffff 0%, #0081ff 50%, #0001ff 100%);
 }
