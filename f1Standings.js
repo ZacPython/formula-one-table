@@ -1,12 +1,16 @@
-console.log('fetch-standings.js loaded')
+console.log('f1Standings.js loaded')
 
 async function fetchStandings() {
     try {
-        const response = await fetch('https://ergast.com/api/f1/current/driverStandings.json');
+        // Jolpica is the community successor to the retired Ergast API
+        const response = await fetch('https://api.jolpi.ca/ergast/f1/current/driverStandings.json');
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.status}`);
+        }
         const data = await response.json();
         return data;
     } catch (error) {
-        console.log('Error fetching standings:', error);
+        console.error('Error fetching standings:', error);
         return null;
     }
 }
@@ -14,6 +18,7 @@ async function fetchStandings() {
 async function driverDetails() {
     try {
         const data = await fetchStandings();
+        if (!data) return [];
         const currentDriverStandings = data.MRData.StandingsTable.StandingsLists[0].DriverStandings;
         const driverDetails = currentDriverStandings.reduce((acc, driver) => {
             const position = driver.position;
@@ -40,54 +45,57 @@ async function driverDetails() {
         }, []);
         return driverDetails;
     } catch (error) {
-        console.log('Error:', error);
+        console.error('Error parsing driver details:', error);
+        return [];
     }
 }
 
 async function seasonDetails() {
     try {
         const data = await fetchStandings();
+        if (!data) return { season: '?', round: '?' };
         const currentSeasonData = data.MRData.StandingsTable.StandingsLists[0];
         const season = currentSeasonData.season;
         const round = currentSeasonData.round;
         return { season: season, round: round };
     } catch (error) {
-        console.log('Error:', error);
+        console.error('Error parsing season details:', error);
+        return { season: '?', round: '?' };
     }
 }
 
 (async function () {
-
     const drivers = await driverDetails();
     const season = await seasonDetails();
-    console.table(drivers)
+    console.table(drivers);
+
     const table = document.getElementById("standingsTable");
     const seasontitle = document.getElementById("season");
-    // Zac start coding here!s
-    standingsHTML = "";
+
+    if (!drivers.length) {
+        table.querySelector("tbody").innerHTML = '<tr><td colspan="5">Failed to load standings. Check console or try again later.</td></tr>';
+        seasontitle.innerHTML = 'Formula 1 Standings (unavailable)';
+        return;
+    }
+
+    let standingsHTML = "";
     drivers.forEach(driver => {
-        driverHTML = `
+        const driverHTML = `
                     <tr>
                         <td>${driver.position}</td>
-                        <td><a class="${driver.teamId}" href="${driver.wikiLink}">${driver.firstName} ${driver.surName}</a></td>
+                        <td><a class="${driver.teamId}" href="${driver.wikiLink}" target="_blank" rel="noopener">${driver.firstName} ${driver.surName}</a></td>
                         <td>${driver.nationality}</td>
                         <td>${driver.team}</td>
                         <td>${driver.points}</td>
                     </tr>
-                `
-        standingsHTML = standingsHTML + driverHTML;
-    })
-    console.log(standingsHTML)
+                `;
+        standingsHTML += driverHTML;
+    });
 
-
-    table.querySelector("tbody").innerHTML = standingsHTML
-    seasontitle.innerHTML = ` Formula 1 Standings For ${season.season} Season, Current Round: ${season.round}`
+    table.querySelector("tbody").innerHTML = standingsHTML;
+    seasontitle.innerHTML = `Formula 1 Standings — ${season.season} Season, Round ${season.round}`;
 })();
 
-function toggleDarkmode(){
-    if(document.body.classList.contains("darkmode")){
-        document.body.classList.remove("darkmode")
-        return
-    }
-    document.body.classList.add("darkmode")
+function toggleDarkmode() {
+    document.body.classList.toggle("darkmode");
 }
