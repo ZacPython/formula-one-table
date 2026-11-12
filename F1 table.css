@@ -20,6 +20,7 @@
     padding: 4px 16px;
     border-radius: 10px;
     font-size: 1.2rem;
+    cursor: pointer;
 }
 
 body{
@@ -31,7 +32,7 @@ body{
 div{
     display: flex;
     justify-content:center;
-    overflow-x: scroll;
+    overflow-x: auto;
 }
 
 table{
@@ -112,6 +113,7 @@ td{
     font-weight:bold;
 }
 
+/* Team hover colors */
 .sauber:hover{
     color:#39ff14;
 }
@@ -156,10 +158,13 @@ td{
     color:#e10600;
 }
 
+.cadillac:hover{
+    color:#a2aaad;
+}
+
 footer{
     background: linear-gradient(to bottom,#ff0000 0%, #ff7e00 50%, #fffe00  100%);
     text-align: center;
-    color: linear-gradient(to top, black, white);
 }
 
 footer h1{
@@ -210,6 +215,5 @@ body.darkmode button{
 }
 
 body.darkmode footer{
-    color: linear-gradient(to bottom, black, white);
     background: linear-gradient(to top, #00ffff 0%, #0081ff 50%, #0001ff 100%);
 }
